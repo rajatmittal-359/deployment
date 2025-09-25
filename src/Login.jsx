@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "./features/slice/authslice";
 import { useNavigate } from "react-router-dom";
-// kjfkjweebfjhbewbhjfkjwjwhfkwe
+
 const Login = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
