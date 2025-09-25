@@ -89,7 +89,7 @@ const Fetch = () => {
         <input
           type="text"
           placeholder="Search here by title or category"
-          className="w-80 rounded-md p-1 border border-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-500"
+          className="w-full max-w-md rounded-md px-3 py-2 border border-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-500"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
@@ -100,7 +100,8 @@ const Fetch = () => {
         <select
           value={sortBy}
           onChange={(e) => setSortBy(e.target.value)}
-          className="w-35 mb-4 rounded-md px-4 py-1 border border-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-500"
+         className="w-full sm:w-auto mb-4 rounded-md px-3 py-2 border border-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-500"
+
         >
           <option value="">Sort by</option>
           <option value="low-high">Low to high</option>
@@ -109,7 +110,7 @@ const Fetch = () => {
       </div>
 
       {/*  Toggle Buttons */}
-      <div className="my-4 flex gap-4 justify-center">
+      <div className="my-4 flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center items-center">
         <button
           onClick={toggleToCard}
           className={`p-2 border rounded ${
@@ -129,9 +130,9 @@ const Fetch = () => {
       </div>
 
       {/*  Category Filter */}
-      <div className="flex justify-center items-center gap-4">
+      <div className="flex flex-wrap justify-center gap-2 sm:gap-4 px-2">
         <button
-          className="border border-grey-400 px-4 py-1 rounded-lg"
+          className="border border-gray-400 px-3 sm:px-4 py-1 rounded-lg text-sm sm:text-base"
           onClick={() => setSelectedcategory("")}
         >
           All
@@ -140,7 +141,7 @@ const Fetch = () => {
           <button
             key={button}
             onClick={() => setSelectedcategory(button)}
-            className="border border-grey-400 px-4 py-1 rounded-lg"
+            className="border border-gray-400 px-3 sm:px-4 py-1 rounded-lg text-sm sm:text-base"
           >
             {button}
           </button>
@@ -158,7 +159,8 @@ const Fetch = () => {
         </p>
       ) : isTable ? (
         /* -------- TABLE VIEW -------- */
-        <table className="w-full border-collapse border border-gray-300 my-6">
+       <div className="overflow-x-auto">
+      <table className="w-full border-collapse border border-gray-300 my-6 text-sm sm:text-base">
           <thead>
             <tr className="bg-gray-200">
               <th className="border border-gray-300 p-2">Image</th>
@@ -224,9 +226,10 @@ const Fetch = () => {
             ))}
           </tbody>
         </table>
+        </div>
       ) : (
         /* -------- CARD VIEW -------- */
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4 sm:p-6 md:p-10">
           {sortedproducts.map((item) => (
             <div key={item.id} className="border rounded-2xl p-6 flex flex-col">
               <LazyLoadImage

@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   user: null,
-  registeredUser: null, // 👈 yeh alag rakhenge signup ke liye
+  registeredUser: null, //  yeh alag rakhenge signup ke liye
 };
 
 const authslice = createSlice({
@@ -10,7 +10,7 @@ const authslice = createSlice({
   initialState,
   reducers: {
     signup: (state, action) => {
-      state.registeredUser = action.payload; // 👈 signup ka data save hoga
+      state.registeredUser = action.payload; //  signup ka data save hoga
     },
     login: (state, action) => {
       const { name, email } = action.payload;
@@ -19,7 +19,7 @@ const authslice = createSlice({
         state.registeredUser.name === name &&
         state.registeredUser.email === email
       ) {
-        state.user = { name, email }; // 👈 login successful
+        state.user = { name, email }; //  login successful
       } else {
         state.user = null; // login fail
       }
