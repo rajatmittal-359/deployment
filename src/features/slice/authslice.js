@@ -5,7 +5,7 @@ const initialState = {
   registeredUser: null, // 👈 yeh alag rakhenge signup ke liye
 };
 
-const authSlice = createSlice({
+const authslice = createSlice({
   name: "auth",
   initialState,
   reducers: {
@@ -30,5 +30,5 @@ const authSlice = createSlice({
   },
 });
 
-export const { signup, login, logout } = authSlice.actions;
-export default authSlice.reducer;
+export const { signup, login, logout } = authslice.actions;
+export default authslice.reducer;
