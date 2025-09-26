@@ -21,7 +21,7 @@ const navigate = useNavigate()
   return (
     <div className="flex flex-col justify-center items-center mt-50">
       
-      <button className="text-2xl font-semibold mb-4 " onClick={goto}><u>Shop Now</u></button>
+      <button className="text-2xl text-purple-600 font-semibold mb-4 " onClick={goto}><u>Shop Now</u></button>
     </div>
   );
 };
